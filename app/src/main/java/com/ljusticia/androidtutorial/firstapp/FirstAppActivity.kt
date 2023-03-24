@@ -19,7 +19,7 @@ class FirstAppActivity : AppCompatActivity() {
 
         btStart.setOnClickListener {
             Log.i("ljustici","Botón pulsado ${etName.text.toString()}") //Muestra mensaje en logcat
-
+            //cambiar
         }
 
 
