@@ -1,8 +1,8 @@
 package com.ljusticia.androidtutorial.firstapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.ljusticia.androidtutorial.R
@@ -18,8 +18,13 @@ class FirstAppActivity : AppCompatActivity() {
         val etName = findViewById<AppCompatEditText>(R.id.etName)
 
         btStart.setOnClickListener {
-            Log.i("ljustici","Botón pulsado ${etName.text.toString()}") //Muestra mensaje en logcat
-            //cambiar
+            val name = etName.text.toString()
+
+            if (name.isNotEmpty()){
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("EXTRA NAME", name)
+                startActivity(intent)
+            }
         }
 
 
