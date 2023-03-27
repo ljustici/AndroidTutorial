@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.ljusticia.androidtutorial.firstapp.FirstAppActivity
 import com.ljusticia.androidtutorial.imccalculator.ImcCalculatorActivity
+import com.ljusticia.androidtutorial.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,15 @@ class MenuActivity : AppCompatActivity() {
         //IMC App
         val btImcApp = findViewById<Button>(R.id.btIMCApp)
         btImcApp.setOnClickListener{ navigateToImcApp()}
+
+        //TODO App
+        val btTodoApp = findViewById<Button>(R.id.btTodoApp)
+        btTodoApp.setOnClickListener{ navigateToTodoApp()}
+    }
+
+    private fun navigateToTodoApp() {
+        val intent = Intent(this, TodoActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToSaludapp(){
@@ -30,4 +40,6 @@ class MenuActivity : AppCompatActivity() {
         val intent = Intent(this, ImcCalculatorActivity::class.java)
         startActivity(intent)
     }
+
+
 }
