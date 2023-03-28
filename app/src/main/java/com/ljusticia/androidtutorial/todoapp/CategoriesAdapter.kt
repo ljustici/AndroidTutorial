@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ljusticia.androidtutorial.R
 
-class CategoriesAdapter(private val categories: List<TaskCategory>) :
+class CategoriesAdapter(private var categories: List<TaskCategory>, private val onItemSelected: (Int) -> Unit) :
     RecyclerView.Adapter<CategoriesViewHolder>() {
 
     //Crea la vista que el método Bind rellenará de datos
@@ -15,7 +15,7 @@ class CategoriesAdapter(private val categories: List<TaskCategory>) :
     }
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        holder.render(categories[position])
+        holder.render(categories[position], onItemSelected) //se le manda la función onItemSelected como parámetro
     }
 
     //devuelve el número de categorías en la lista
