@@ -30,7 +30,7 @@
         android:id="@+id/btSuperhero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Todo App"/>
+        android:text="Superhero App"/>
 
 
 </LinearLayout>
