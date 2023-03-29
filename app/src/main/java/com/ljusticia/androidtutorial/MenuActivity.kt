@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.ljusticia.androidtutorial.firstapp.FirstAppActivity
 import com.ljusticia.androidtutorial.imccalculator.ImcCalculatorActivity
+import com.ljusticia.androidtutorial.settings.SettingsActivity
 import com.ljusticia.androidtutorial.superheroapp.SuperHeroListActivity
 import com.ljusticia.androidtutorial.todoapp.TodoActivity
 
@@ -29,6 +30,15 @@ class MenuActivity : AppCompatActivity() {
         //Superhero App
         val btSuperhero = findViewById<Button>(R.id.btSuperhero)
         btSuperhero.setOnClickListener{navigatoToSuperheroApp()}
+
+        //Settings
+        val btSettings = findViewById<Button>(R.id.btSettings)
+        btSuperhero.setOnClickListener{navigatoToSettings()}
+    }
+
+    private fun navigatoToSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToTodoApp() {
