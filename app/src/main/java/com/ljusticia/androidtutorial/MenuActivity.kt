@@ -33,7 +33,7 @@ class MenuActivity : AppCompatActivity() {
 
         //Settings
         val btSettings = findViewById<Button>(R.id.btSettings)
-        btSuperhero.setOnClickListener{navigatoToSettings()}
+        btSettings.setOnClickListener{navigatoToSettings()}
     }
 
     private fun navigatoToSettings() {
